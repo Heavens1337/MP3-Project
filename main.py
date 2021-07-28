@@ -4,8 +4,6 @@ from guizero import App, PushButton, ListBox, Slider, Text, CheckBox
 
 pygame.mixer.init()
 pygame.mixer.music.set_volume(1.0)
-x = 1.0
-global track_placement
 
 
 def play_track():
