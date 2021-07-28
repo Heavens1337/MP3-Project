@@ -1,4 +1,5 @@
 import pygame
+import time
 from guizero import App, PushButton, ListBox, Slider, Text
 
 
@@ -62,40 +63,88 @@ def music_select():
 
 def queue_func():
     if song_list.value == "Venom of Venus":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Armata Strigoi.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(209)
+        queue_func()
 
     elif song_list.value == "Armata Strigoi":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Army of the Night.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(240)
+        queue_func()
 
     elif song_list.value == "Army of the Night":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/To Hell and Back.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(202)
+        queue_func()
 
     elif song_list.value == "To Hell and Back":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Shiroyama.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(209)
+        queue_func()
 
     elif song_list.value == "Shiroyama":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/The Last Stand.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(216)
+        queue_func()
 
     elif song_list.value == "The Last Stand":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Shepherd of Fire.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(239)
+        queue_func()
 
     elif song_list.value == "Shepherd of Fire":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Bat Country.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(324)
+        queue_func()
 
     elif song_list.value == "Bat Country":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Unholy Confessions.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(312)
+        queue_func()
 
     elif song_list.value == "Unholy Confessions":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/All Out Life.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(284)
+        queue_func()
 
     elif song_list.value == "All Out Life":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Before I Forget.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(340)
+        queue_func()
 
     elif song_list.value == "Before I Forget":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Nero Forte.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(264)
+        queue_func()
 
     elif song_list.value == "Nero Forte":
+        pygame.mixer.music.play()
         pygame.mixer.music.queue('/Users/calemthomas/music files/Venom of Venus.mp3')
+        song_list.value = "Armata Strigoi"
+        time.sleep(315)
+        queue_func()
 
 
 interface = App(title="MP3 Player", height=500, width=400, layout="auto")
@@ -121,7 +170,7 @@ pause_button = PushButton(interface, command=pause_track, text="Pause")
 resume_button = PushButton(interface, command=resume_track, text="Resume")
 volume_slider = Slider(interface, start=1, end=100, horizontal=True, command=volume_alter, align="bottom")
 slider_title = Text(interface, text="Volume Slider", align="bottom")
-queue_next_song = PushButton(interface, text="Queue Next", command=queue_func)
+queue_next_song = PushButton(interface, text="Autoplay (Disables Control)", command=queue_func)
 
 
 interface.display()
